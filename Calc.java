@@ -13,7 +13,7 @@ public class Calc {
 
     static CalcFrame frame;
     
-    static JLabel numLabel = new JLabel("enter your expression", SwingConstants.RIGHT);
+    static JLabel numLabel = new JLabel("0", SwingConstants.RIGHT);
     static JLabel exprLabel = new JLabel("", SwingConstants.RIGHT);
     
     static String nums = new String();  //variable for the value of the numLabel
@@ -59,6 +59,9 @@ public class Calc {
 
         switch (clickButton.txt) {
             case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".":
+                if (nums.equals("0")){
+                    nums = "";
+                }
                 if (clickButton.txt.equals(".") & nums.contains(".")){
                     break;
                 } else if (expression.contains("=")){
@@ -81,7 +84,7 @@ public class Calc {
                 if (nums.equals("") | numLabel.getText().equals("enter your expression")){
                     break;
                 }
-                nums = "";
+                nums = "0";
                 numLabel.setText(nums);
                 break;
 
@@ -90,7 +93,7 @@ public class Calc {
                     break;
                 }
                 count = 0;
-                nums = "";
+                nums = "0";
                 expression = "";
                 numLabel.setText(nums);
                 exprLabel.setText(nums);
@@ -162,7 +165,7 @@ public class Calc {
                 expression = "";
                 expression += a + " " + operation;
                 exprLabel.setText(expression);
-                nums = "";
+                nums = "0";
                 numLabel.setText(nums);
                 break;
 
