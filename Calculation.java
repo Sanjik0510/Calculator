@@ -1,11 +1,7 @@
 package Calculator;
 
 public class Calculation{
-
-    public static void main(String[] args){
-    
-    }
-    
+        
     //method for basic operations like addition, subtraction, multiplication and division
     static String calc(String a, String b, String operation){
         double diva = Double.valueOf(a);

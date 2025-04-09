@@ -7,22 +7,22 @@ import javax.swing.JLabel;
 public class Calc {
 
     //initialization of variables for expression, number, buttons, frame, labels
-    static CalcPanel exprPanel;
-    static CalcPanel numPanel;
-    static JPanel bPanel;
+    CalcPanel exprPanel;
+    CalcPanel numPanel;
+    JPanel bPanel;
 
-    static CalcFrame frame;
+    CalcFrame frame;
     
-    static JLabel numLabel = new JLabel("0", SwingConstants.RIGHT);
-    static JLabel exprLabel = new JLabel("", SwingConstants.RIGHT);
+    JLabel numLabel = new JLabel("0", SwingConstants.RIGHT);
+    JLabel exprLabel = new JLabel("", SwingConstants.RIGHT);
     
-    static String nums = new String();  //variable for the value of the numLabel
-    static String expression = new String(); //variable for the value of the exprLabel
+    String nums = new String();  //variable for the value of the numLabel
+    String expression = new String(); //variable for the value of the exprLabel
     
-    static int count = 0; //variable to count the symbol "="
-    static String a = new String(); //number one
-    static String b = new String(); //number two
-    static String operation = new String(); // operation
+    int count = 0; //variable to count the symbol "="
+    String a = new String(); //number one
+    String b = new String(); //number two
+    String operation = new String(); // operation
     
     // Main method
     Calc(){
@@ -45,7 +45,7 @@ public class Calc {
     }
 
     //method to create all buttons
-    static void buttons(JPanel panel){
+    void buttons(JPanel panel){
         String[] btext = new String[]{"%", "CE", "C", "Del", "1/x", "x^2", "√x", "÷", "7", "8", "9", "x", "4", "5", "6", "-", "1", "2", "3", "+", "+/-", "0", ".", "="};
         for (String i: btext) {
             CalcButton button = new CalcButton(i); //creating a new button
@@ -55,7 +55,7 @@ public class Calc {
     }
     
     // method to control actoins
-    public static void Controller(CalcButton clickButton) {
+    void Controller(CalcButton clickButton) {
 
         switch (clickButton.txt) {
             case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".":

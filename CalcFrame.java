@@ -37,7 +37,8 @@ class CalcButton extends JButton{
         @Override
         public void actionPerformed(ActionEvent e) {
             CalcButton clickedButton = (CalcButton) e.getSource();
-            Calc.Controller(clickedButton);
+            Calc controller = new Calc();
+            controller.Controller(clickedButton);
             
         }
     };
